@@ -1,6 +1,92 @@
+import { useState } from "react";
+
 import CabeceraLink from "../../components/CabeceraLink";
 
 function Register() {
+  const [formData, setFormData] = useState({
+    username: "",
+    email: "",
+    password: "",
+    agreedToTerms: false, // Asegúrate de inicializar el checkbox con un valor booleano (true o false)
+  });
+
+  const [errors, setErrors] = useState({
+    username: "",
+    email: "",
+    password: "",
+    agreedToTerms: "",
+  });
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+    setErrors({ ...errors, [name]: "" });
+  };
+
+  const validateForm = () => {
+    let isValid = true;
+    const newErrors = { ...errors };
+
+    if (!formData.username) {
+      newErrors.username = "El nombre de usuario es obligatorio";
+      isValid = false;
+    }
+
+    if (!formData.email) {
+      newErrors.email = "El correo electrónico es obligatorio";
+      isValid = false;
+    }
+
+    if (!formData.password) {
+      newErrors.password = "La contraseña es obligatoria";
+      isValid = false;
+    }
+
+    if (!formData.agreedToTerms) {
+      newErrors.agreedToTerms = "Debes aceptar los términos y condiciones";
+      isValid = false;
+    }
+
+    setErrors(newErrors);
+    return isValid;
+  };
+
+  const handleRegister = async (e) => {
+    e.preventDefault();
+
+    if (!validateForm()) {
+      return;
+    }
+
+    try {
+      const response = await fetch(
+        `${import.meta.env.VITE_BACKEND_URL}` ||
+          "http://localhost:5000/auth/register",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        }
+      );
+
+      const data = await response.json();
+
+      console.log(data);
+
+      if (response.status === 201) {
+        setFormData({
+          username: "",
+          email: "",
+          password: "",
+        });
+      }
+    } catch (error) {
+      console.error("Error al registrar usuario:", error);
+    }
+  };
+
   return (
     <>
       <header className="row align-items-center login-register">
@@ -11,44 +97,78 @@ function Register() {
                 <h1 className="h2 fw-semibold float-start mb-5">
                   Crea tu cuenta
                 </h1>
-                <form method="post" action="" className="mt-5">
+                <form onSubmit={handleRegister} className="mt-5">
                   <div className="mt-4">
                     <input
                       type="text"
-                      className="form-control input-rounded"
+                      className={`form-control input-rounded ${
+                        errors.username && "is-invalid"
+                      }`}
                       id="usuario"
+                      name="username"
+                      value={formData.username}
+                      onChange={handleInputChange}
                       placeholder="Usuario"
                     />
+                    {errors.username && (
+                      <div className="invalid-feedback">{errors.username}</div>
+                    )}
                   </div>
                   <div className="mt-4">
                     <input
                       type="email"
-                      className="form-control input-rounded"
+                      className={`form-control input-rounded ${
+                        errors.email && "is-invalid"
+                      }`}
                       id="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleInputChange}
                       placeholder="Email"
                     />
+                    {errors.email && (
+                      <div className="invalid-feedback">{errors.email}</div>
+                    )}
                   </div>
                   <div className="mt-4">
                     <input
                       type="password"
-                      className="form-control input-rounded"
+                      className={`form-control input-rounded ${
+                        errors.password && "is-invalid"
+                      }`}
                       id="password"
+                      name="password"
+                      value={formData.password}
+                      onChange={handleInputChange}
                       placeholder="Contraseña"
                     />
+                    {errors.password && (
+                      <div className="invalid-feedback">{errors.password}</div>
+                    )}
                   </div>
                   <div className="mt-3">
                     <input
                       type="checkbox"
-                      className="form-check-input"
+                      className={`form-check-input ${
+                        errors.agreedToTerms && "is-invalid"
+                      }`}
                       id="check"
-                      checked
+                      checked={formData.agreedToTerms}
+                      onChange={() =>
+                        setFormData({
+                          ...formData,
+                          agreedToTerms: !formData.agreedToTerms,
+                        })
+                      }
                     />
-                    <label
-                      className="small form-check-label"
-                      htmlFor="exampleCheck1"
-                    >
+                    <label className="small form-check-label" htmlFor="check">
                       Acepto los <a href="#">Términos y condiciones</a>
                     </label>
+                    {errors.agreedToTerms && (
+                      <div className="invalid-feedback">
+                        {errors.agreedToTerms}
+                      </div>
+                    )}
                   </div>
                   <button
                     type="submit"
@@ -92,4 +212,5 @@ function Register() {
     </>
   );
 }
+
 export default Register;

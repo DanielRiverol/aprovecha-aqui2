@@ -1,5 +1,47 @@
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import CabeceraLink from "../../components/CabeceraLink";
+
 function Login() {
+  const navigate = useNavigate(); // Cambiar a useNavigate
+
+  const [formData, setFormData] = useState({
+    email: "",
+    password: "",
+    agreedToTerms: true, // Puedes establecer el valor inicial según tus necesidades
+  });
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  const handleLogin = async (e) => {
+    e.preventDefault();
+
+    try {
+      const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}`||"http://localhost:5000/auth/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.status === 200) {
+        // Autenticación exitosa, redirige a la página deseada (por ejemplo, el panel de control)
+        navigate("../comprar"); // Cambiar a navigate
+      } else {
+        // Manejar el error de autenticación
+        console.error("Error en la autenticación:", response.statusText);
+        // Puedes mostrar un mensaje al usuario, por ejemplo:
+        // setErrorMsg("Credenciales incorrectas");
+      }
+    } catch (error) {
+      console.error("Error al intentar iniciar sesión:", error);
+    }
+  };
+
   return (
     <>
       <header className="row align-items-center login-register">
@@ -10,13 +52,16 @@ function Login() {
                 <h1 className="h2 fw-semibold float-start mb-5">
                   Inicia sesión
                 </h1>
-                <form className="mt-5">
+                <form onSubmit={handleLogin} className="mt-5">
                   <div className="mt-4">
                     <input
-                      type="text"
+                      type="email"
                       className="form-control input-rounded"
-                      id="usuario"
-                      placeholder="Usuario"
+                      id="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleInputChange}
+                      placeholder="Email"
                     />
                   </div>
                   <div className="mt-4">
@@ -24,6 +69,9 @@ function Login() {
                       type="password"
                       className="form-control input-rounded"
                       id="password"
+                      name="password"
+                      value={formData.password}
+                      onChange={handleInputChange}
                       placeholder="Contraseña"
                     />
                     <div className="form-text mt-3">
@@ -35,12 +83,11 @@ function Login() {
                       type="checkbox"
                       className="form-check-input"
                       id="check"
-                      checked
+                      name="agreedToTerms"
+                      checked={formData.agreedToTerms}
+                      onChange={handleInputChange}
                     />
-                    <label
-                      className="small form-check-label"
-                      htmlFor="exampleCheck1"
-                    >
+                    <label className="small form-check-label" htmlFor="check">
                       Acepto los <a href="#">Términos y condiciones</a>
                     </label>
                   </div>
@@ -85,4 +132,5 @@ function Login() {
     </>
   );
 }
+
 export default Login;

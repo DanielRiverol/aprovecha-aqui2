@@ -1,0 +1,90 @@
+{
+  "cardsData": [
+    {
+      "id": 1,
+      "title": "Descuentos significativos:",
+      "img": "./img/img-ventaja-3.png",
+      "text": "Ofrecemos alimentos de calidad a precios reducidos, permitiendo a las personas ahorrar dinero mientras contribuyen a la reducción del desperdicio."
+    },
+    {
+      "id": 2,
+      "title": "Variedad de opciones frescas:",
+      "img": "./img/img-ventaja-2.png",
+      "text": "Proporcionamos acceso a una amplia gama de alimentos frescos y de calidad que, de otra manera, podrían haber sido descartados, ofreciendo a los clientes opciones saludables y deliciosas."
+    },
+    {
+      "id": 3,
+      "title": "Impacto ambiental positivo:",
+      "img": "./img/img-ventaja-1.png",
+      "text": "Al unir a comercios con aquellos que buscan evitar el desperdicio, ayudamos a reducir la huella de carbono y a minimizar el impacto ambiental asociado con la producción y eliminación de alimentos no consumidos."
+    }
+  ],
+  "comprar": [
+    {
+      "id": 1,
+      "text": "Inicia tu experiencia en nuestro sitio buscando comercios locales participantes. Puedes explorar una lista de establecimientos asociados, filtrar por ubicación o categoría de productos."
+    },
+    {
+      "id": 2,
+      "text": "Una vez que has seleccionado un comercio, explora los productos disponibles. La plataforma te mostrará una variedad de opciones, desde productos frescos hasta artículos con fecha de caducidad próxima."
+    },
+    {
+      "id": 3,
+      "text": "Puedes seleccionar una bolsa predefinida que contiene una selección diversa de productos a punto de caducar. Estas bolsas pueden variar en tamaño y contenido, ofreciendo opciones adaptadas a tus necesidades."
+    },
+    {
+      "id": 4,
+      "text": "Una vez que has elegido la bolsa deseada, la plataforma facilita el contacto con el vendedor. Pueden enviar mensajes al comercio a través de WhatsApp para ultimar detalles adicionales, hacer preguntas sobre los productos o coordinar la entrega."
+    }
+  ],
+  "vender": [
+    {
+      "id": 1,
+      "text": "Completa el formulario en la plataforma proporcionando información básica, como nombre, ubicación, tipo de establecimiento y datos de contacto. Este proceso les permite acceder a la red de AprovechaAQUI."
+    },
+    {
+      "id": 2,
+      "text": "Configura tu perfil, destacando tu oferta de productos, políticas de venta y cualquier información relevante que desees compartir con los usuarios."
+    },
+    {
+      "id": 3,
+      "text": "Crea bolsas de productos a punto de caducar, estableciendo combinaciones atractivas y variadas. Puedes especificar la cantidad, descripción de los productos y el descuento aplicado para cada bolsa. Publica en la plataforma, haciéndolas visibles para los usuarios interesados."
+    },
+    {
+      "id": 4,
+      "text": "Cuando un usuario muestra interés en una bolsa o se pone en contacto. Se facilita la comunicación para ultimar detalles adicionales. Una vez que se alcanza un acuerdo con el usuario, puedes confirmar el pedido y coordinar el proceso de pago."
+    }
+  ],
+  "destacados": [
+    {
+      "img": "./img/img-ventaja-3.png",
+      "name": "Destacado 1",
+      "text": "Texto descriptivo del Destacado 1",
+      "rating": 4
+    },
+    {
+      "img": "./img/img-ventaja-3.png",
+      "name": "Destacado 2",
+      "text": "Texto descriptivo del Destacado 2",
+      "rating": 5
+    },
+    {
+      "img": "./img/img-ventaja-3.png",
+      "name": "Destacado 3",
+      "text": "Texto descriptivo del Destacado 3",
+      "rating": 3
+    },
+    {
+      "img": "./img/img-ventaja-3.png",
+      "name": "Destacado 4",
+      "text": "Texto descriptivo del Destacado 4",
+      "rating": 4
+    },
+    {
+      "img": "./img/img-ventaja-3.png",
+      "name": "Destacado 5",
+      "text": "Texto descriptivo del Destacado 5",
+      "rating": 5
+    }
+  ]
+}

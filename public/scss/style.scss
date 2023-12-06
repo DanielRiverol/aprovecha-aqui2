@@ -1,0 +1,195 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap");
+@import "./partials/variables";
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: $bg-body;
+}
+nav {
+  background-color: #fff;
+}
+.title {
+  color: $dark;
+  font-weight: 600;
+  &-secondary {
+    font-weight: 600;
+    color: $secundario;
+  }
+}
+
+header.row {
+  padding: 0 10%;
+  background-color: $principal;
+  height: 500px;
+  display: flex;
+  place-items: center;
+}
+header.header-comprar {
+  height: 300px;
+}
+header.login-register {
+  padding: 40px;
+  height: auto;
+}
+@import "./partials/buttons";
+
+.row {
+  position: relative;
+  z-index: 2;
+}
+.bg-principal {
+  background-color: $acento;
+}
+.bg-secundario {
+  background-color: $bg-secundario;
+}
+.divider {
+  top: 4.4rem;
+  z-index: -1;
+  left: 30%;
+  position: absolute;
+  height: 1.1rem;
+
+  background-color: $principal;
+}
+.divider-sm {
+  @extend .divider;
+  width: 40%;
+}
+.divider-lg {
+  @extend .divider;
+  left: 20%;
+  width: 60%;
+}
+
+.circle {
+  border: 2px solid $principal;
+  padding: 15px;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: $principal;
+  font-size: calc($font-size * 1.5);
+}
+.box {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+.icon {
+  font-size: calc($font-size * 1.5);
+  &-warning {
+    color: $bg-secundario;
+  }
+}
+.border-custom {
+  border-left: 3px solid $principal;
+}
+.avatar {
+  width: 145px;
+  height: 145px;
+  object-fit: cover;
+}
+/* comprar */
+.card-sidebar,
+.card-content {
+  width: 258px;
+  .card-header {
+    background-color: $principal;
+  }
+}
+
+.list-group-item {
+  border: none;
+  a i {
+    font-size: 1.2rem;
+  }
+  a .bi-pin-map {
+    color: $secundario;
+  }
+  a .bi-plus-square-fill {
+    color: $principal;
+  }
+}
+$colors: (
+  dark: #2a2f35,
+  primary: #ed7470,
+  secondary: $secundario,
+);
+@each $cf, $color in $colors {
+  .color-#{$cf} {
+    color: $color;
+  }
+}
+.input-rounded {
+  border-radius: .8rem;
+  outline: none !important;
+}
+.input-rounded:focus {
+  box-shadow: none;
+  border-color: $principal;
+}
+/* footer */
+footer {
+  height: 150px;
+  display: flex;
+  align-items: center;
+  background-color: $dark;
+}
+
+@media (max-width: 768px) {
+  header.row {
+    height: auto;
+    text-align: center;
+    h1 {
+      font-size: 30px !important;
+    }
+
+    p {
+      font-size: 18px !important;
+    }
+    .col {
+      margin-top: 20px;
+    }
+  }
+  footer {
+    padding: 20px 0;
+    text-align: center;
+    height: auto;
+  }
+}
+
+@media (max-width: 576px) {
+  .row {
+    div.circle {
+      margin: 0 auto;
+    }
+    .col .text-start {
+      text-align: center !important;
+    }
+
+    h2 {
+      font-size: 24px;
+    }
+  }
+  .border-custom {
+    border-left: 0;
+    border-top: 3px solid $principal;
+  }
+  .divider-lg {
+    left: 3%;
+    width: 95% !important;
+  }
+  .divider-sm {
+    left: 34%;
+    width: 30% !important;
+  }
+  .avatar {
+    width: 120px;
+    height: 120px;
+  }
+}

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="./img/favicon.svg" type="xml/svg">
+    <!-- Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css"
+    />
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Login | Aprovecha aquí</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg">
+      <div class="container-fluid">
+        <a class="navbar-brand fs-4 title" href="./index.html">AprovechAQUÍ</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarTogglerDemo02"
+          aria-controls="navbarTogglerDemo02"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+          <ul class="navbar-nav m-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a
+                class="nav-link active fs-6 fw-semibold"
+                aria-current="page"
+                href="./comprar.html"
+                >Encuentra descuentos</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active fs-6 fw-semibold" href="#">Contacto</a>
+            </li>
+          </ul>
+          <form class="d-flex mx-4" role="search">
+            <div class="input-group">
+              <button class="btn" type="button" id="button-addon1">
+                <i class="bi bi-search" style="font-size: 1.4rem"></i>
+              </button>
+              <input
+                type="text"
+                class="form-control"
+                placeholder=""
+                aria-label="Buscar productos"
+                aria-describedby="button-addon1"
+                hidden
+              />
+            </div>
+          </form>
+          <a href="./login.html" class="navbar-brand fs-6 title"
+            >INICIA SESIÓN</a
+          >
+          <a href="./register.html" class="navbar-brand fs-6 title-secondary"
+            >REGÍSTRATE</a
+          >
+        </div>
+      </div>
+    </nav>
+    <!-- container   -->
+    <div class="container-fluid">
+      <!-- Header -->
+      <header class="row align-items-center login-register">
+        <div class="col">
+          <div class="card w-100">
+            <div class="row text-center py-5">
+              <div class="col-6 px-5">
+                <h1 class="h2 fw-semibold float-start mb-5">Inicia sesión</h1>
+                <form method="post" action="" class="mt-5">
+                  <div class="mt-4">
+                    <input
+                      type="text"
+                      class="form-control input-rounded"
+                      id="usuario"
+                      placeholder="Usuario"
+                    />
+                  </div>
+                  <div class="mt-4">
+                    <input
+                      type="password"
+                      class="form-control input-rounded"
+                      id="password"
+                      placeholder="Contraseña"
+                    />
+                    <div class="form-text mt-3">
+                      ¿Olvidó su contraseña? <a href="#">Recuperar</a>
+                    </div>
+                  </div>
+                  <div class="mt-3">
+                    <input
+                      type="checkbox"
+                      class="form-check-input"
+                      id="check"
+                      checked
+                    />
+                    <label class="small form-check-label" for="exampleCheck1"
+                      >Acepto los <a href="#">Términos y condiciones</a></label
+                    >
+                  </div>
+                  <button
+                    type="submit"
+                    class="button button-dark button-medium mt-4"
+                  >
+                    INGRESAR
+                  </button>
+                  <p class="mt-3">o</p>
+                </form>
+                <button type="button" class="button">
+                  <i class="bi bi-google"></i> Continúe con Google
+                </button>
+                <div class="mt-3">
+                  <p class="form-text">¿Todavía no tiene cuenta?</p>
+                  <a href="./register.html" class="btn button button-dark button-medium mt-3">
+                    REGISTRAR
+                  </a>
+                </div>
+              </div>
+              <div class="col border-start px-5 ">
+                <img src="./img/login.png" alt="img" class="img-fluid mt-5" />
+                <p class="">
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                  Deserunt natus minus ad provident illo animi fugiat libero
+                  quod impedit, laborum dolores quae voluptas voluptatibus totam
+                  aperiam sequi vitae distinctio error.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+      <!-- Fin Header -->
+
+      <footer class="row row-cols-1 row-cols-md-2 text-light">
+        <div class="col">
+          <h3 class="fw-semibold">AprovechAQUÍ</h3>
+        </div>
+        <div class="col">
+          <h6>¿Necesitas ayuda?</h6>
+          <p class="small">
+            Contáctanos por email:
+            <a
+              href="#"
+              class="link-light link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover"
+              >contacto@aprovechaaqui.com</a
+            >
+          </p>
+          <a
+            href="#"
+            class="small me-2 link-light link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover"
+            >Sobre...</a
+          >
+          <a
+            href="#"
+            class="small me-2 link-light link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover"
+            >Políticas de privacidad</a
+          >
+          <a
+            href="#"
+            class="small link-light link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover"
+            >Téminos y condiciones</a
+          >
+        </div>
+      </footer>
+    </div>
+    <!-- Bootstrap Js -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Custom Js -->
+    <script src="./js/main.js"></script>
+  </body>
+</html>

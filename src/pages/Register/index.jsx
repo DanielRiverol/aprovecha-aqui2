@@ -1,8 +1,9 @@
 import { useState } from "react";
-
+import { useNavigate } from "react-router-dom";
 import CabeceraLink from "../../components/CabeceraLink";
 
 function Register() {
+  const navigate = useNavigate(); // Cambiar a useNavigate
   const [formData, setFormData] = useState({
     username: "",
     email: "",
@@ -60,7 +61,7 @@ function Register() {
 
     try {
       const response = await fetch(
-        `${import.meta.env.VITE_BACKEND_URL}` ||
+        `${import.meta.env.VITE_BACKEND_URL}/auth/register` ||
           "http://localhost:5000/auth/register",
         {
           method: "POST",
@@ -81,6 +82,7 @@ function Register() {
           email: "",
           password: "",
         });
+        navigate("../login"); // Cambiar a navigate
       }
     } catch (error) {
       console.error("Error al registrar usuario:", error);

@@ -20,7 +20,7 @@ function Login() {
     e.preventDefault();
 
     try {
-      const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}`||"http://localhost:5000/auth/login", {
+      const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/auth/login`||"http://localhost:5000/auth/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

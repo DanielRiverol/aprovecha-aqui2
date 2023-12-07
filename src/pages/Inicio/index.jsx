@@ -15,21 +15,21 @@ function Inicio() {
   return (
     <>
       <Cabecera>
-        <header className="row row-cols-1 row-cols-sm-2 row-cols-md-2">
+        <header className="row row-cols-1 row-cols-sm-2 row-cols-md-2 header-inicio">
           <div className="col">
             <h1 className="display-5 fw-semibold">{data.encabezado}</h1>
             <p className="mt-3 fs-5 lh-lg">{data.leyenda}</p>
             <div className="row row-cols-1 row-cols-md-1 row-cols-lg-2 mt-4">
               <div className="col">
                 <CabeceraLink url="comprar">
-                  <p className="btn button button-dark button-large mt-4">
+                  <p className="btn  button button-primary button-large mt-4">
                     QUIERO COMPRAR
                   </p>
                 </CabeceraLink>
               </div>
               <div className="col">
-                <CabeceraLink url="comprar">
-                  <p className="btn button button-dark button-large mt-4">
+                <CabeceraLink url="register">
+                  <p className="btn button button-primary button-large mt-4">
                     QUIERO VENDER
                   </p>
                 </CabeceraLink>
@@ -147,7 +147,7 @@ function Inicio() {
       {/* Seccion nosotros */}
       <div className="row text-center mt-5 py-5 bg-secundario">
         <div className="col-10 offset-1">
-          <h2 className="h2 fw-semibold">SOBRE AprovechAQUÍ</h2>
+          <h2 className="h2 fw-semibold" id="nosotros">SOBRE AprovechAQUÍ</h2>
           <div className="divider-sm"></div>
           <div className="row mt-5">
             <div className="col col-md-6 offset-md-3 offset-0">
@@ -163,7 +163,7 @@ function Inicio() {
           </div>
           <div className="row py-5 text-center">
             <div className="col">
-              <button className="btn button-variant button-large">
+              <button className="button-variant m-auto">
                 CONTÁCTANOS
               </button>
             </div>

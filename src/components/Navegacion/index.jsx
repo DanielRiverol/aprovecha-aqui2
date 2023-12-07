@@ -19,23 +19,8 @@ function Navegacion() {
             <span className="navbar-toggler-icon"></span>
           </button>
           <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
-            <ul className="navbar-nav m-auto mb-2 mb-lg-0">
-              <li className="nav-item">
-                <CabeceraLink url="comprar">
-                  <span className="nav-link active fs-6 fw-semibold">
-                    Encuentra descuentos
-                  </span>
-                </CabeceraLink>
-              </li>
-              <li className="nav-item">
-                <CabeceraLink url="comprar">
-                  <span className="nav-link active fs-6 fw-semibold">
-                    Contacto
-                  </span>
-                </CabeceraLink>
-              </li>
-            </ul>
-            <form className="d-flex mx-4" role="search">
+            
+            {/* <form className="d-flex mx-4" role="search">
               <div className="input-group">
                 <button className="btn" type="button" id="button-addon1">
                   <i
@@ -60,7 +45,23 @@ function Navegacion() {
               <span className="navbar-brand fs-6 title-secondary">
                 REGÍSTRATE
               </span>
-            </CabeceraLink>
+            </CabeceraLink> */}
+            <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
+              <li className="nav-item">
+                <CabeceraLink url="comprar">
+                  <span className="nav-link active fs-6 fw-semibold">
+                    Encuentra descuentos
+                  </span>
+                </CabeceraLink>
+              </li>
+              <li className="nav-item">
+                <CabeceraLink url="/#nosotros">
+                  <span className="nav-link active fs-6 fw-semibold">
+                    Sobre nosotros
+                  </span>
+                </CabeceraLink>
+              </li>
+            </ul>
           </div>
         </div>
       </nav>

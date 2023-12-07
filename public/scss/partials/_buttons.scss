@@ -35,13 +35,13 @@ $buttons-colors: (
     color: $color;
   }
 }
-$buttons-size:(
-small: 120px,
-medium: 180px,
-large: 222px,
+$buttons-size: (
+  small: 120px,
+  medium: 180px,
+  large: 232px,
 );
 @each $button, $size in $buttons-size {
-  .button-#{$button}{
+  .button-#{$button} {
     width: $size;
   }
-};
+}

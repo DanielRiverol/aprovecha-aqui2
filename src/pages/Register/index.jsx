@@ -178,11 +178,11 @@ function Register() {
                   >
                     REGISTRAR
                   </button>
-                  <p className="mt-3">o</p>
+                  {/* <p className="mt-3">o</p> */}
                 </form>
-                <button type="button" className="button">
+                {/*  <button type="button" className="button">
                   <i className="bi bi-google"></i> Continúe con Google
-                </button>
+                </button> */}
                 <div className="mt-3">
                   <p className="form-text">¿Ya tiene cuenta?</p>
                   <CabeceraLink url="../login">

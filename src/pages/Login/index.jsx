@@ -20,17 +20,30 @@ function Login() {
     e.preventDefault();
 
     try {
-      const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/auth/login`||"http://localhost:5000/auth/login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
+      const response = await fetch(
+        `${import.meta.env.VITE_BACKEND_URL}/auth/login` ||
+          "http://localhost:5000/auth/login",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        }
+      );
 
       if (response.status === 200) {
-        // Autenticación exitosa, redirige a la página deseada (por ejemplo, el panel de control)
-        navigate("../comprar"); // Cambiar a navigate
+        const { user } = await response.json();
+
+        const userId = user._id;
+        console.log(user._id);
+        // Almacenar el ID del usuario en el estado local (localStorage)
+        sessionStorage.setItem("userId", userId);
+        const userIdRec = sessionStorage.getItem("userId");
+        console.log(userIdRec);
+
+        // Autenticación exitosa, redirige a la página deseada con el ID del usuario
+        navigate(`../profile/${userIdRec}`);
       } else {
         // Manejar el error de autenticación
         console.error("Error en la autenticación:", response.statusText);
@@ -99,7 +112,7 @@ function Login() {
                   </button>
                   {/* <p className="mt-3">o</p> */}
                 </form>
-               {/*  <button type="button" className="button">
+                {/*  <button type="button" className="button">
                   <i className="bi bi-google"></i> Continúe con Google
                 </button> */}
                 <div className="mt-3">

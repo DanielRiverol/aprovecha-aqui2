@@ -55,11 +55,11 @@ function Navegacion() {
                 </CabeceraLink>
               </li>
               <li className="nav-item">
-                <CabeceraLink url="/#nosotros">
-                  <span className="nav-link active fs-6 fw-semibold">
+                {/* <CabeceraLink url="/#nosotros"> */}
+                  <a href="#nosotros" className="nav-link active fs-6 fw-semibold">
                     Sobre nosotros
-                  </span>
-                </CabeceraLink>
+                  </a>
+              {/*   </CabeceraLink> */}
               </li>
             </ul>
           </div>

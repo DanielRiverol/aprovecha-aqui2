@@ -29,6 +29,10 @@ header.header-comprar {
   height: 300px;
 }
 
+header.header-inicio {
+  height: 93vh;
+}
+
 header.login-register {
   padding: 40px;
   height: auto;

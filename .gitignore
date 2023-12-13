@@ -1,5 +1,5 @@
 *.txt
-
+public/*.html 
 # Logs
 logs
 *.log

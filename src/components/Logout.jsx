@@ -4,7 +4,7 @@ const LogoutButton = () => {
       // Llamada a la API para cerrar sesión
       const response = await fetch(
         
-        `${import.meta.env.VITE_BACKEND_URL}/users/logout` ||
+        `${import.meta.env.VITE_BACKEND_URL}/api/users/logout` ||
           "http://localhost:4000/api/users/logout",
         {
           method: "POST",

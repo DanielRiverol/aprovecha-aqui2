@@ -61,7 +61,7 @@ function Register() {
 
     try {
       const response = await fetch(
-        `${import.meta.env.VITE_BACKEND_URL}/users/register` ||
+        `${import.meta.env.VITE_BACKEND_URL}/api/users/register` ||
           "http://localhost:4000/api/users/register",
         {
           method: "POST",

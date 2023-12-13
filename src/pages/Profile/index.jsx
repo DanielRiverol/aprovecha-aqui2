@@ -11,7 +11,7 @@ function Profile() {
 
       try {
         const response = await fetch(
-          `${import.meta.env.VITE_BACKEND_URL}/users/${userId}` ||
+          `${import.meta.env.VITE_BACKEND_URL}/api/users/${userId}` ||
             `http://localhost:4000/api/users/${userId}`,
           {
             headers: {

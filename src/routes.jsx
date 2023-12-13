@@ -18,6 +18,7 @@ function AppRoutes() {
           <Route path="comprar" element={<Comprar />}></Route>
           <Route path="profile/:id" element={<Profile />}></Route>
           <Route path="comercio/:id" element={<Store />}></Route>
+          <Route path="comercio" element={<Store />}></Route>
         </Route>
       </Routes>
     </BrowserRouter>

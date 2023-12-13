@@ -19,7 +19,7 @@ function Store() {
 
     try {
       const response = await fetch(
-        `${import.meta.env.VITE_BACKEND_URL}/users/${userId}` ||
+        `${import.meta.env.VITE_BACKEND_URL}/api/users/${userId}` ||
           `http://localhost:4000/api/users/${userId}`,
         {
           headers: {
@@ -49,7 +49,7 @@ function Store() {
   const fetchBusinessData = async (businessId, token) => {
     try {
       const response = await fetch(
-        `${import.meta.env.VITE_BACKEND_URL}/stores/${businessId}` ||
+        `${import.meta.env.VITE_BACKEND_URL}/api/stores/${businessId}` ||
           `http://localhost:4000/api/stores/${businessId}`,
         {
           headers: {
@@ -76,7 +76,7 @@ function Store() {
       const token = localStorage.getItem("token");
 
       const response = await fetch(
-        `${import.meta.env.VITE_BACKEND_URL}/stores` ||
+        `${import.meta.env.VITE_BACKEND_URL}/api/stores` ||
           "http://localhost:4000/api/stores",
         {
           method: "POST",

@@ -10,7 +10,7 @@ function BusinessInfo({ businessId }) {
         const token = localStorage.getItem("token");
         console.log(businessId);
         const response = await fetch(
-          `${import.meta.env.VITE_BACKEND_URL}/stores/${businessId}` ||
+          `${import.meta.env.VITE_BACKEND_URL}/api/stores/${businessId}` ||
             `http://localhost:4000/api/stores/${businessId}`,
           {
             headers: {

@@ -1,22 +1,20 @@
 import Cabecera from "../Cabecera";
 import { BoxTitle, BoxSide } from "../Boxes";
 // eslint-disable-next-line react/prop-types
-function Profile({ name, email, imagen = "../img/avatar.png" }) {
+function Profile({ name, email, imagen = "../img/store-default.png" }) {
   return (
     <Cabecera>
       {/* Title */}
       <BoxTitle name={name} title="Tu perfil" />
       <div className="row row-cols-1 row-cols-md-4 mt-5">
         {/* Sidebar */}
-        <BoxSide icon="person-circle" link="Perfil" />
+        <BoxSide icon="person-circle" link="comercio" title="Enlaces"/>
 
-        <div className="col col-md-8 offset-0">
+        <div className="col col-md-8 offset-0 mb-5">
           <div className="card w-100 mt-3">
             <h4 className="fw-semibold text-center pt-4">Información básica</h4>
             <div className="row row-cols-1 row-cols-sm-1 row-cols-md-2 mt-3">
-              <div className="col-6 offset-3 text-center">
-                {/* ... (resto del código) ... */}
-              </div>
+             
               <div className="card-body text-center">
                 <img
                   src={imagen}

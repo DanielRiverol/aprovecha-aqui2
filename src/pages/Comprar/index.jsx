@@ -1,9 +1,33 @@
 import Cabecera from "../../components/Cabecera";
+import { BoxSide, BoxSideSale } from "../../components/Boxes";
+
 function Comprar() {
+  const ubicaciones = [
+    {
+      id: 1,
+      icon: "geo",
+      link: "mexico",
+    },
+    {
+      id: 2,
+      icon: "geo",
+      link: "tandil",
+    },
+    {
+      id: 3,
+      icon: "geo",
+      link: "CABA",
+    },
+    {
+      id: 4,
+      icon: "geo",
+      link: "CABA 2",
+    },
+  ];
   const data = {
     encabezado: "Encuentra tu negocio más cercano",
     leyenda:
-    "Descubre ofertas exclusivas y productos frescos cerca de tuyo y aprovecha las mejores opciones de compra! 🛒🌟",
+      "Descubre ofertas exclusivas y productos frescos cerca de tuyo y aprovecha las mejores opciones de compra! 🛒🌟",
   };
   return (
     <>
@@ -15,6 +39,7 @@ function Comprar() {
           </div>
         </header>
       </Cabecera>
+      <BoxSideSale title="Compra por negocio" links={ubicaciones} />
     </>
   );
 }

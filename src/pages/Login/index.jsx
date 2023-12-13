@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import CabeceraLink from "../../components/CabeceraLink";
 
+
 function Login() {
   const navigate = useNavigate(); // Cambiar a useNavigate
 
@@ -21,8 +22,8 @@ function Login() {
 
     try {
       const response = await fetch(
-        `${import.meta.env.VITE_BACKEND_URL}/auth/login` ||
-          "http://localhost:5000/auth/login",
+        `${import.meta.env.VITE_BACKEND_URL}/users/login` ||
+          "http://localhost:4000/api/users/login",
         {
           method: "POST",
           headers: {
@@ -33,14 +34,21 @@ function Login() {
       );
 
       if (response.status === 200) {
-        const { user } = await response.json();
+        /*  const { user } = await response.json();
 
         const userId = user._id;
         console.log(user._id);
         // Almacenar el ID del usuario en el estado local (localStorage)
         sessionStorage.setItem("userId", userId);
         const userIdRec = sessionStorage.getItem("userId");
-        console.log(userIdRec);
+        console.log(userIdRec); */
+        const { token, user } = await response.json();
+        sessionStorage.setItem("userId", user._id);
+        localStorage.setItem("token", token);
+        const userIdRec = sessionStorage.getItem("userId");
+        // Decodificar el token para obtener la información del usuario
+
+        // Realizar acciones adicionales según la información del usuario
 
         // Autenticación exitosa, redirige a la página deseada con el ID del usuario
         navigate(`../profile/${userIdRec}`);

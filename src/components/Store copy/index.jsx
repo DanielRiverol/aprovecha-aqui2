@@ -1,169 +1,293 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Cabecera from "../Cabecera";
 import { BoxTitle, BoxSide } from "../Boxes";
-// eslint-disable-next-line react/prop-types
-export default function Comercio({ name, address, phone, horario, img }) {
-  const [isEditing, setIsEditing] = useState(false);
-  const [formData, setFormData] = useState({
-    nombre: "",
-    email: "",
-    negocio: "",
+
+function Store() {
+  const [userData, setUserData] = useState(null);
+  const [newBusinessData, setNewBusinessData] = useState({
+    nombreNegocio: "",
+    direccion: "",
+    zona: "",
     telefono: "",
-    imagen: "", // Nueva propiedad para la imagen
+    horarioAtencion: "",
   });
+  const [businessData, setBusinessData] = useState(null);
 
-  const toggleEdit = () => {
-    setIsEditing((prevIsEditing) => !prevIsEditing);
-    // Reiniciar el formulario al cambiar entre editar y no editar
-    setFormData({
-      nombre: "",
-      email: "",
-      negocio: "",
-      telefono: "",
-      imagen: "", // Nueva propiedad para la imagen
-    });
-  };
+  const fetchUserData = async () => {
+    const userId = sessionStorage.getItem("userId");
+    const token = localStorage.getItem("token");
 
-  const handleInputChange = (e) => {
-    const { name, value, type } = e.target;
+    try {
+      const response = await fetch(
+        `${import.meta.env.VITE_BACKEND_URL}/users/${userId}` ||
+          `http://localhost:4000/api/users/${userId}`,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+      if (response.status === 200) {
+        const userData = await response.json();
+        setUserData(userData);
 
-    // Manejar la carga de archivos para la imagen
-    if (type === "file") {
-      const file = e.target.files[0];
-      setFormData({ ...formData, [name]: file });
-    } else {
-      setFormData({ ...formData, [name]: value });
+        if (userData.user.store) {
+          fetchBusinessData(userData.user.store, token);
+        }
+      } else {
+        console.error("Error al obtener la información del usuario");
+      }
+    } catch (error) {
+      console.error("Error al obtener la información del usuario:", error);
     }
   };
 
-  const handleSave = (e) => {
+  useEffect(() => {
+    fetchUserData();
+  }, []);
+
+  const fetchBusinessData = async (businessId, token) => {
+    try {
+      const response = await fetch(
+        `${import.meta.env.VITE_BACKEND_URL}/stores/${businessId}` ||
+          `http://localhost:4000/api/stores/${businessId}`,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+
+      if (response.status === 200) {
+        const data = await response.json();
+        setBusinessData(data);
+      } else {
+        console.error("Error al obtener la información del negocio");
+      }
+    } catch (error) {
+      console.error("Error al obtener la información del negocio:", error);
+    }
+  };
+
+  const handleCreateStore = async (e) => {
     e.preventDefault();
-    // Aquí deberías agregar la lógica para guardar los datos editados
-    // Puedes enviarlos al servidor, actualizar el estado, etc.
-    console.log("Datos editados:", formData);
-    // Desactivar la edición después de guardar
-    toggleEdit();
+
+    try {
+      const token = localStorage.getItem("token");
+
+      const response = await fetch(
+        `${import.meta.env.VITE_BACKEND_URL}/stores` ||
+          "http://localhost:4000/api/stores",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+          body: JSON.stringify({
+            ...newBusinessData,
+          }),
+        }
+      );
+
+      if (response.status === 201) {
+        console.log("Tienda creada exitosamente");
+        // Después de crear la tienda, actualizamos la información del negocio
+        fetchUserData();
+      } else {
+        console.error("Error al crear el comercio del Usuario");
+      }
+    } catch (error) {
+      console.error("Error al crear el comercio del usuario:", error);
+    }
   };
 
   return (
-    <Cabecera>
-      {/* Title */}
-      <BoxTitle name={name} title="Tu negocio" />
-      <div className={`row row-cols-1 row-cols-md-4 mt-5 ${isEditing ? 'editing' : ''}`}>
-        {/* Sidebar */}
-        <BoxSide icon="person-circle" link="Perfil" />
-        
-        <div className="col col-md-8 offset-0">
-          <div className="row row-cols-1 row-cols-md-1">
-            <div className="col">
-              <div className="card w-100 mt-3">
-                <h4 className="fw-semibold text-center pt-4">
-                  Información básica
-                </h4>
-                <div className="row row-cols-1 row-cols-sm-1 row-cols-md-2 mt-3">
-                  <div className="col-6 offset-3 text-center">
-                    <img
-                      src={isEditing && formData.imagen ? URL.createObjectURL(formData.imagen) : img}
-                      className="img-fluid rounded-circle avatar"
-                      alt="img-perfil"
-                    />
-                    {/* Mostrar el input para cargar la imagen solo en modo de edición */}
-                    {isEditing && (
-                      <input
-                        type="file"
-                        accept="image/*"
-                        className="form-control mt-2"
-                        id="imagen"
-                        name="imagen"
-                        onChange={handleInputChange}
-                      />
-                    )}
-                  </div>
-                  <div className={`card-body text-center ${isEditing ? 'editing' : ''}`}>
-                    {isEditing ? (
-                      <form onSubmit={handleSave} className="col-8 offset-2">
-                        <div className="mb-3">
-                          <input
-                            type="text"
-                            className="form-control input-rounded"
-                            id="nombre"
-                            name="nombre"
-                            placeholder="Nombre y apellido"
-                            value={formData.nombre}
-                            onChange={handleInputChange}
-                          />
-                        </div>
-                        <div className="mb-3">
-                          <input
-                            type="email"
-                            className="form-control input-rounded"
-                            id="email"
-                            name="email"
-                            placeholder="email@email.com"
-                            value={formData.email}
-                            onChange={handleInputChange}
-                          />
-                        </div>
-                        <div className="mb-3">
-                          <input
-                            type="text"
-                            className="form-control input-rounded"
-                            id="negocio"
-                            name="negocio"
-                            placeholder="Tu negocio"
-                            value={formData.negocio}
-                            onChange={handleInputChange}
-                          />
-                        </div>
-                        <div className="mb-3">
-                          <input
-                            type="tel"
-                            className="form-control input-rounded"
-                            id="telefono"
-                            name="telefono"
-                            placeholder="Teléfono/Whatsapp"
-                            value={formData.telefono}
-                            onChange={handleInputChange}
-                          />
-                        </div>
-                        <button
-                          type="submit"
-                          className="btn button button-dark"
-                        >
-                          GUARDAR
-                        </button>
-                      </form>
-                    ) : (
-                      <ul className="list-group list-group-flush">
-                        <li className="list-group-item">
-                          <h6 className="fw-semibold">Dirección:</h6>
-                          <span className="small">{address}</span>
-                        </li>
-                        <li className="list-group-item">
-                          <h6 className="fw-semibold">Teléfono</h6>
-                          <span className="small">{phone}</span>
-                        </li>
-                        <li className="list-group-item">
-                          <h6 className="fw-semibold">Horario de atención:</h6>
-                          <span className="small">{horario}</span>
-                        </li>
-                      </ul>
-                    )}
-                    <button
-                      type="button"
-                      className="btn button button-dark mt-3"
-                      onClick={toggleEdit}
-                    >
-                      {isEditing ? "CANCELAR" : "EDITAR"}
-                    </button>
+    <>
+      {userData && (
+        <Cabecera>
+          <BoxTitle name={userData.user.nombre} title="Tu negocio" />
+          <div className="row row-cols-1 row-cols-md-4 mt-5">
+          {/* Sidebar */}
+          <BoxSide icon="person-circle" link="profile" title="Enlaces" />
+
+          {userData.user.store ? (
+            
+              <div className="col col-md-8 offset-0">
+                <div className="card w-100 my-3">
+                  <div className="row">
+                    <div className="col-md-8 offset-2">
+                      <div className="card-body text-center">
+                        <h4 className="card-title fw-semibold my-5">
+                          Información del negocio
+                        </h4>
+                        {/* Renderizar la información del negocio */}
+                        {businessData ? (
+                          <>
+                            <div className="mb-3">
+                              <label htmlFor="nombreNegocio">
+                                Nombre del negocio:
+                              </label>
+                              <span className="fw-bold">
+                                {businessData.nombreNegocio}
+                              </span>
+                            </div>
+
+                            <div className="mb-3">
+                              <label htmlFor="direccion">Dirección:</label>
+                              <span>{businessData.direccion}</span>
+                            </div>
+
+                            <div className="mb-3">
+                              <label htmlFor="telefono">
+                                Teléfono/Whatsapp:
+                              </label>
+                              <span>{businessData.telefono}</span>
+                            </div>
+
+                            <div className="mb-3">
+                              <label htmlFor="zona">Barrio:</label>
+                              <span>{businessData.zona}</span>
+                            </div>
+
+                            <div className="mb-3">
+                              <label htmlFor="horario">
+                                Horario de Atención:
+                              </label>
+                              <span>{businessData.horarioAtencion}</span>
+                            </div>
+                          </>
+                        ) : (
+                          <p>Cargando información del negocio...</p>
+                        )}
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-            {/* ... Resto del código ... */}
+            
+          ) : (
+            
+              <div className="col col-md-8 offset-0">
+                <div className="card w-100 my-3">
+                  <div className="row">
+                    <div className="col-md-8 offset-2">
+                      <form onSubmit={handleCreateStore}>
+                        <div className="card-body text-center">
+                          <h4 className="card-title fw-semibold my-5">
+                            Crear negocio
+                          </h4>
+                          {/* Resto del formulario de creación del negocio */}
+                          <div className="mb-3">
+                            <label htmlFor="nombreNegocio">
+                              Nombre del negocio:
+                            </label>
+                            <input
+                              type="text"
+                              id="nombreNegocio"
+                              className="form-control"
+                              value={newBusinessData.nombreNegocio}
+                              placeholder="Almacén Aprovecha"
+                              onChange={(e) =>
+                                setNewBusinessData({
+                                  ...newBusinessData,
+                                  nombreNegocio: e.target.value,
+                                })
+                              }
+                            />
+                          </div>
+
+                          <div className="mb-3">
+                            <label htmlFor="direccion">Dirección:</label>
+                            <input
+                              type="text"
+                              id="direccion"
+                              className="form-control"
+                              placeholder="Calle 1234"
+                              value={newBusinessData.direccion}
+                              onChange={(e) =>
+                                setNewBusinessData({
+                                  ...newBusinessData,
+                                  direccion: e.target.value,
+                                })
+                              }
+                            />
+                          </div>
+
+                          <div className="mb-3">
+                            <label htmlFor="telefono">Teléfono/Whatsapp:</label>
+                            <input
+                              type="tel"
+                              id="telefono"
+                              className="form-control"
+                              placeholder="11 23423432"
+                              value={newBusinessData.telefono}
+                              onChange={(e) =>
+                                setNewBusinessData({
+                                  ...newBusinessData,
+                                  telefono: e.target.value,
+                                })
+                              }
+                            />
+                          </div>
+
+                          <div className="mb-3">
+                            <label htmlFor="zona">Barrio:</label>
+                            <input
+                              type="text"
+                              id="zona"
+                              className="form-control"
+                              placeholder="Barrio"
+                              value={newBusinessData.zona}
+                              onChange={(e) =>
+                                setNewBusinessData({
+                                  ...newBusinessData,
+                                  zona: e.target.value,
+                                })
+                              }
+                            />
+                          </div>
+
+                          <div className="mb-3">
+                            <label htmlFor="horario">
+                              Horario de Atención:
+                            </label>
+                            <input
+                              type="text"
+                              id="horario"
+                              className="form-control"
+                              placeholder="Lunes a Sábados de 8 a 16"
+                              value={newBusinessData.horarioAtencion}
+                              onChange={(e) =>
+                                setNewBusinessData({
+                                  ...newBusinessData,
+                                  horarioAtencion: e.target.value,
+                                })
+                              }
+                            />
+                          </div>
+
+                          <div className="mt-3">
+                            <button
+                              type="submit"
+                              className="button button-dark"
+                            >
+                              Guardar negocio
+                            </button>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            
+          )}
           </div>
-        </div>
-      </div>
-    </Cabecera>
+        </Cabecera>
+      )}
+    </>
   );
 }
+
+export default Store;

@@ -5,14 +5,14 @@ import CabeceraLink from "../../components/CabeceraLink";
 function Register() {
   const navigate = useNavigate(); // Cambiar a useNavigate
   const [formData, setFormData] = useState({
-    username: "",
+    nombre: "",
     email: "",
     password: "",
     agreedToTerms: false, // Asegúrate de inicializar el checkbox con un valor booleano (true o false)
   });
 
   const [errors, setErrors] = useState({
-    username: "",
+    nombre: "",
     email: "",
     password: "",
     agreedToTerms: "",
@@ -28,8 +28,8 @@ function Register() {
     let isValid = true;
     const newErrors = { ...errors };
 
-    if (!formData.username) {
-      newErrors.username = "El nombre de usuario es obligatorio";
+    if (!formData.nombre) {
+      newErrors.nombre = "El nombre de usuario es obligatorio";
       isValid = false;
     }
 
@@ -61,8 +61,8 @@ function Register() {
 
     try {
       const response = await fetch(
-        `${import.meta.env.VITE_BACKEND_URL}/auth/register` ||
-          "http://localhost:5000/auth/register",
+        `${import.meta.env.VITE_BACKEND_URL}/users/register` ||
+          "http://localhost:4000/api/users/register",
         {
           method: "POST",
           headers: {
@@ -78,7 +78,7 @@ function Register() {
 
       if (response.status === 201) {
         setFormData({
-          username: "",
+          nombre: "",
           email: "",
           password: "",
         });
@@ -104,16 +104,16 @@ function Register() {
                     <input
                       type="text"
                       className={`form-control input-rounded ${
-                        errors.username && "is-invalid"
+                        errors.nombre && "is-invalid"
                       }`}
                       id="usuario"
-                      name="username"
-                      value={formData.username}
+                      name="nombre"
+                      value={formData.nombre}
                       onChange={handleInputChange}
                       placeholder="Usuario"
                     />
-                    {errors.username && (
-                      <div className="invalid-feedback">{errors.username}</div>
+                    {errors.nombre && (
+                      <div className="invalid-feedback">{errors.nombre}</div>
                     )}
                   </div>
                   <div className="mt-4">

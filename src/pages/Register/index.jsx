@@ -95,11 +95,11 @@ function Register() {
         <div className="col">
           <div className="card w-100">
             <div className="row text-center py-5">
-              <div className="col-6 px-5">
+              <div className="col-sm-12 col-md-6 px-5">
                 <h1 className="h2 fw-semibold float-start mb-5">
                   Crea tu cuenta
                 </h1>
-                <form onSubmit={handleRegister} className="mt-5">
+                <form onSubmit={handleRegister} className=" mt-5">
                   <div className="mt-4">
                     <input
                       type="text"
@@ -192,7 +192,7 @@ function Register() {
                   </CabeceraLink>
                 </div>
               </div>
-              <div className="col border-start px-5 ">
+              <div className="col border-start px-5">
                 <img
                   src="./img/register.png"
                   alt="img"

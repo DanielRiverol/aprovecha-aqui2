@@ -69,7 +69,7 @@ function Login() {
         <div className="col">
           <div className="card w-100">
             <div className="row text-center py-5">
-              <div className="col-6 px-5">
+              <div className="col-sm-12 col-md-6 px-5">
                 <h1 className="h2 fw-semibold float-start mb-5">
                   Inicia sesión
                 </h1>

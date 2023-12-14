@@ -108,11 +108,10 @@ function Store() {
         <Cabecera>
           <BoxTitle name={userData.user.nombre} title="Tu negocio" />
           <div className="row row-cols-1 row-cols-md-4 mt-5">
-          {/* Sidebar */}
-          <BoxSide icon="person-circle" link="profile" title="Enlaces" />
+            {/* Sidebar */}
+            <BoxSide icon="person-circle" link="profile" title="Enlaces" />
 
-          {userData.user.store ? (
-            
+            {userData.user.store ? (
               <div className="col col-md-8 offset-0">
                 <div className="card w-100 my-3">
                   <div className="row">
@@ -121,40 +120,58 @@ function Store() {
                         <h4 className="card-title fw-semibold my-5">
                           Información del negocio
                         </h4>
+                        <img
+                          src="../img/store-default.png"
+                          alt={"Imagen " + businessData.nombreNegocio}
+                          className="img-fluid rounded-circle avatar"
+                        />
                         {/* Renderizar la información del negocio */}
                         {businessData ? (
                           <>
-                            <div className="mb-3">
-                              <label htmlFor="nombreNegocio">
+                            <div className="my-3">
+                              <label
+                                htmlFor="nombreNegocio"
+                                className="fw-bold"
+                              >
                                 Nombre del negocio:
                               </label>
-                              <span className="fw-bold">
+                              <span className="ms-1">
                                 {businessData.nombreNegocio}
                               </span>
                             </div>
 
                             <div className="mb-3">
-                              <label htmlFor="direccion">Dirección:</label>
-                              <span>{businessData.direccion}</span>
+                              <label htmlFor="direccion" className="fw-bold">
+                                Dirección:
+                              </label>
+                              <span className="ms-1">
+                                {businessData.direccion}
+                              </span>
                             </div>
 
                             <div className="mb-3">
-                              <label htmlFor="telefono">
+                              <label htmlFor="telefono" className="fw-bold">
                                 Teléfono/Whatsapp:
                               </label>
-                              <span>{businessData.telefono}</span>
+                              <span className="ms-1">
+                                {businessData.telefono}
+                              </span>
                             </div>
 
                             <div className="mb-3">
-                              <label htmlFor="zona">Barrio:</label>
-                              <span>{businessData.zona}</span>
+                              <label htmlFor="zona" className="fw-bold">
+                                Barrio:
+                              </label>
+                              <span className="ms-1">{businessData.zona}</span>
                             </div>
 
                             <div className="mb-3">
-                              <label htmlFor="horario">
+                              <label htmlFor="horario" className="fw-bold">
                                 Horario de Atención:
                               </label>
-                              <span>{businessData.horarioAtencion}</span>
+                              <span className="ms-1">
+                                {businessData.horarioAtencion}
+                              </span>
                             </div>
                           </>
                         ) : (
@@ -165,20 +182,23 @@ function Store() {
                   </div>
                 </div>
               </div>
-            
-          ) : (
-            
+            ) : (
               <div className="col col-md-8 offset-0">
                 <div className="card w-100 my-3">
                   <div className="row">
-                    <div className="col-md-8 offset-2">
+                    <div className="col-sm-12 col-md-8 offset-md-2 offset-sm-0 ">
                       <form onSubmit={handleCreateStore}>
                         <div className="card-body text-center">
                           <h4 className="card-title fw-semibold my-5">
                             Crear negocio
                           </h4>
+                          <img
+                            src="../img/store-default.png"
+                            alt="imagen"
+                            className="img-fluid rounded-circle avatar"
+                          />
                           {/* Resto del formulario de creación del negocio */}
-                          <div className="mb-3">
+                          <div className="my-3">
                             <label htmlFor="nombreNegocio">
                               Nombre del negocio:
                             </label>
@@ -280,9 +300,50 @@ function Store() {
                     </div>
                   </div>
                 </div>
+                {/* Productos */}
+                <div className="row row-cols-1 row-cols-md-4 mt-5">
+                  <div className="col col-md-12 offset-0 mb-5">
+                    <div className="card w-100 mt-3">
+                      <h4 className="fw-semibold text-center pt-4">
+                        Selecciona productos que vendes
+                      </h4>
+                      <div className="row row-cols-1 row-cols-sm-1 row-cols-md-2 mt-3">
+                        <div className="card-body text-center">
+                          <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum dolore cumque vitae necessitatibus. Tenetur, repudiandae officia quisquam tempore est, culpa odio molestias reiciendis esse reprehenderit maxime minima sunt iste dolor?
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                {/* fin Productos */}
+                {/* Bolsas */}
+                <div className="row row-cols-1 row-cols-md-4 mt-5">
+                  <div className="col col-md-12 offset-0 mb-5">
+                    <div className="card w-100 mt-3">
+                      <h4 className="fw-semibold text-center pt-4">
+                        Selecciona el tipo de bolsa
+                      </h4>
+                      <div className="row row-cols-1 row-cols-sm-1 row-cols-md-2 mt-3">
+                        <div className="card-body text-center">
+                          <p>
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorum sunt ipsam perferendis harum a praesentium itaque error id nesciunt, dolore, eligendi iusto ad, reprehenderit culpa alias. Saepe facilis hic quidem?
+                          </p>
+                          <a
+                            href=""
+                            className="fw-semibold link-danger link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover"
+                          >
+                            Quiero eliminar mi cuenta
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                {/* fin bolsas */}
               </div>
-            
-          )}
+            )}
           </div>
         </Cabecera>
       )}

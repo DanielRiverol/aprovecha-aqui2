@@ -165,7 +165,7 @@ function Inicio() {
       </div> */}
         {/* Seccion destacados */}
         <div className="row text-center mt-5 py-5">
-          <div className="col-10 offset-1">
+          <div className="col-10 offset-1" id="destacados">
             <TitleSection
               title="Recomendaciones de la semana"
               dividerType="divider-mdx"

@@ -21,11 +21,11 @@ function Navegacion() {
           <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
             <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <CabeceraLink url="comprar">
-                  <span className="nav-link active fs-6 fw-semibold">
+                {/* <CabeceraLink url="comprar">
+                </CabeceraLink> */}
+                  <a href="#destacados" className="nav-link active fs-6 fw-semibold">
                     Encuentra descuentos
-                  </span>
-                </CabeceraLink>
+                  </a>
               </li>
               <li className="nav-item">
                 {/* <CabeceraLink url="/#nosotros"> */}

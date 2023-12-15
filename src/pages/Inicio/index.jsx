@@ -27,9 +27,9 @@ function Inicio() {
               <p className="fs-5">¡Donde cada elección cuenta!</p>
             </div>
             <div className="col-12 w-100 mt-4">
-              <button className="button button-dark button-large fs-5">
+              <a href="#participa" className="button button-dark button-large fs-5">
                 CONOCER MÁS
-              </button>
+              </a>
             </div>
           </div>
         </header>
@@ -69,10 +69,10 @@ function Inicio() {
       </div>
 
       <div className="row mt-2 py-5">
-        <div className="col-6 col-sm-12  offset-3 offset-sm-0 text-center">
+        <div className="col-6 col-sm-12  offset-3 offset-sm-0 text-center"id="participa">
           <h2 className="h2 fw-semibold">TU PARTICIPACIÓN CUENTA</h2>
           <div className="divider-mdx"></div>
-          <p className="text-center mt-5">
+          <p className="text-center mt-5" >
             Podemos cambiar la realidad y construir un mundo sin desperdicio.
             Desde nuestro lugar podemos hacer mcuho. ¡Sumate también!
           </p>

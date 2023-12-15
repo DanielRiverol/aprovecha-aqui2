@@ -9,7 +9,7 @@ const CardDestacado = ({ img, name, text, rating = 1 }) => {
   ));
 
   return (
-    <div className="col mt-5">
+    <div className="col mt-5 gx-5">
       <img src={img} alt="imagen" className="img-fluid rounded" />
       <h5 className="mt-2 fw-semibold">{name}</h5>
       <p>{text}</p>

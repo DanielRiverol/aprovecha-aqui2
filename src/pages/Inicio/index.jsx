@@ -2,7 +2,7 @@ import Cabecera from "../../components/Cabecera";
 //import CabeceraLink from "../../components/CabeceraLink";
 import TitleSection from "../../components/TitleSection";
 import { CardServices, CardStep, CardDestacado } from "../../components/Card";
-import { cardsData, comprar, vender, destacados } from "../../data/data.json";
+import { cardsData, comprar, destacados } from "../../data/data.json";
 
 function Inicio() {
   const data = {
@@ -13,12 +13,12 @@ function Inicio() {
   return (
     <>
       <Cabecera>
-        <header className="row text-center header-inicio">
+        <header className="row row-cols-1 row-cols-md-4 row-cols-lg-12 text-center header-inicio">
           <div className="contenedor">
-            <div className="col-6 offset-3 mt-5">
+            <div className="col-6 offset-3 col-md-12 offset-md-0 col-lg-10 offset-lg-1 mt-5 ">
               <h1 className="display-5 fw-bold">{data.encabezado}</h1>
             </div>
-            <div className="col-6 offset-2 mt-4 slogan">
+            <div className="col-6 offset-2 col-md-12 offset-md-0 col-lg-12 offset-lg-2 mt-4 slogan">
               <p className="fs-5">
                 Únete a nuestra comunidad dedicada a reducir el desperdicio
                 alimentario.
@@ -26,7 +26,7 @@ function Inicio() {
               <p className="fs-5">Ahorra dinero generando impacto positivo. </p>
               <p className="fs-5">¡Donde cada elección cuenta!</p>
             </div>
-            <div className="col-12  w-100 mt-4">
+            <div className="col-12 w-100 mt-4">
               <button className="button button-dark button-large fs-5">
                 CONOCER MÁS
               </button>
@@ -35,7 +35,8 @@ function Inicio() {
         </header>
       </Cabecera>
       {/* Seccion Vision Mision */}
-      <div className="row mt-5 py-5">
+    <div className="main-content">
+    <div className="row mt-5 py-5">
         <div className="col-8 offset-2 text-center">
           <h2 className="h2 fw-semibold">NUESTRA MISIÓN</h2>
           <div className="divider-sm"></div>
@@ -68,8 +69,8 @@ function Inicio() {
       </div>
 
       <div className="row mt-2 py-5">
-        <div className="col-6 offset-3 text-center">
-          <h2 className="h2 fw-semibold">TU PARTICIPACION CUENTA</h2>
+        <div className="col-6 col-sm-12  offset-3 offset-sm-0 text-center">
+          <h2 className="h2 fw-semibold">TU PARTICIPACIÓN CUENTA</h2>
           <div className="divider-mdx"></div>
           <p className="text-center mt-5">
             Podemos cambiar la realidad y construir un mundo sin desperdicio.
@@ -78,7 +79,7 @@ function Inicio() {
         </div>
       </div>
       <div className="row text-center mt-0 py-2">
-        <div className="col-12">
+        <div className="col-10 offset-1">
           <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 mt-5">
             {cardsData.map((card) => {
               return (
@@ -141,7 +142,7 @@ function Inicio() {
         <div className="col-10 offset-1">
           <TitleSection
             title="Recomendaciones de la semana"
-            dividerType="divider-lg"
+            dividerType="divider-mdx"
           />
           <div className="row row-cols-1 row-cols-sm-2 row-cols-md-4 mt-5">
             {destacados.map((card) => {
@@ -186,6 +187,7 @@ function Inicio() {
           </div>
         </div>
       </div>
+    </div>
     </>
   );
 }

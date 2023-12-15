@@ -1,7 +1,7 @@
 export default function Footer() {
   return (
     <>
-      <footer className="row row-cols-1 row-cols-md-2 text-light ">
+      <footer className="row row-cols-1  row-cols-md-2  text-light ">
         <div className="col">
           <h3 className="fw-semibold">AprovechAQUÍ</h3>
         </div>
@@ -28,12 +28,12 @@ export default function Footer() {
           >
             Políticas de privacidad
           </a>
-          <a
+          {/* <a
             href="#"
             className="small link-light link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover"
           >
             Términos y condiciones
-          </a>
+          </a> */}
         </div>
       </footer>
     </>

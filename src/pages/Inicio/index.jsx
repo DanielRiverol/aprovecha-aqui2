@@ -122,9 +122,26 @@ function Inicio() {
               })}
             </div>
           </div>
-        </div>{" "}
-        <div className="row row-cols-1 row-cols-sm-2 row-cols-md-4 text-center mt-5">
-              <div className="col-md-6 offset-md-3 col-sm-8 offset-sm-0 offset-lg-0 mt-4">
+        </div>
+        <div className="sociales">
+          
+          <a href="" className="button button-dark button-medium fs-5">
+            <i
+              className="bi bi-facebook me-3"
+              style={{ fontSize: 1.4 + "rem" }}
+            ></i>
+            Facebook
+          </a>
+          <a href="" className="button button-dark button-medium fs-5">
+            <i
+              className="bi bi-instagram me-3"
+              style={{ fontSize: 1.4 + "rem" }}
+            ></i>
+            Instagram
+          </a>
+        </div>
+        {/* <div className="row row-cols-1 row-cols-sm-2 row-cols-md-4 text-center mt-5">
+              <div className="col-md-6 offset-md-6 col-sm-8 offset-sm-0 offset-lg-0 mt-4">
                 <a href="" className="button button-dark button-medium fs-5">
                   <i
                     className="bi bi-facebook me-3"
@@ -133,7 +150,7 @@ function Inicio() {
                   Facebook
                 </a>
               </div>
-              <div className="col col-md-6 offset-md-3  offset-lg-0 mt-4">
+              <div className="col col-md-4 offset-md-4  offset-lg-0 mt-4">
                 <a href="" className="button button-dark button-medium fs-5">
                   <i
                     className="bi bi-instagram me-3"
@@ -142,7 +159,7 @@ function Inicio() {
                   Instagram
                 </a>
               </div>
-            </div>
+            </div> */}
         {/* Seccion como vender */}
         {/* <div className="row text-center mt-5 py-5">
         <div className="col-10 offset-1">
@@ -220,26 +237,23 @@ function Inicio() {
                 <button className="button-variant m-auto">CONTÁCTANOS</button>
               </div>
             </div> */}
-            <div className="row row-cols-1 row-cols-sm-2 row-cols-md-4 text-center mt-5">
-              <div className="col-md-6 offset-md-3 col-sm-8 offset-sm-0 offset-lg-0 mt-4">
-                <a href="" className="button button-dark button-medium fs-5">
-                  <i
-                    className="bi bi-facebook me-3"
-                    style={{ fontSize: 1.4 + "rem" }}
-                  ></i>
-                  Facebook
-                </a>
-              </div>
-              <div className="col col-md-6 offset-md-3  offset-lg-0 mt-4">
-                <a href="" className="button button-dark button-medium fs-5">
-                  <i
-                    className="bi bi-instagram me-3"
-                    style={{ fontSize: 1.4 + "rem" }}
-                  ></i>
-                  Instagram
-                </a>
-              </div>
-            </div>
+             <div className="sociales">
+          
+          <a href="" className="button button-dark button-medium fs-5">
+            <i
+              className="bi bi-facebook me-3"
+              style={{ fontSize: 1.4 + "rem" }}
+            ></i>
+            Facebook
+          </a>
+          <a href="" className="button button-dark button-medium fs-5">
+            <i
+              className="bi bi-instagram me-3"
+              style={{ fontSize: 1.4 + "rem" }}
+            ></i>
+            Instagram
+          </a>
+        </div>
           </div>
         </div>
       </div>

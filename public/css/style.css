@@ -12,7 +12,9 @@ body {
 nav {
   background-color: #fff;
 }
-
+p{
+  font-size: 1.1rem !important;
+}
 .title {
   color: #2A2F35;
   font-weight: 600;
@@ -263,6 +265,22 @@ header.login-register {
   border-color: #73CAC3;
 }
 
+.sociales {
+  gap: 32px;
+  width: 100%;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sociales .button {
+  display: flex;
+  align-items: center;
+  height: 45px;
+  width: 220px;
+}
+
 /* footer */
 footer {
   height: 150px;
@@ -400,8 +418,9 @@ footer {
     transform: translateX(50%);
   }
 
-  .main-content {
-
+  .sociales {
+    height: 120px;
+flex-direction: column;
     /* top: 480px; */
   }
 }

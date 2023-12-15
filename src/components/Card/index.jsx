@@ -23,10 +23,10 @@ const CardDestacado = ({ img, name, text, rating = 1 }) => {
 // eslint-disable-next-line react/prop-types
 const CardServices = ({ title, text, img }) => {
   return (
-    <div className="col">
+    <div className="col gx-4">
       <img src={img} alt="img-muestra" className="img-fluid rounded" />
       <h5 className="mt-3 color-danger fw-semibold">{title}</h5>
-      <p className="form-text lh-lg py-3 ">{text}</p>
+      <p className="form-text lh-lg py-3">{text}</p>
     </div>
   );
 };

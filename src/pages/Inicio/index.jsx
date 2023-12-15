@@ -1,83 +1,84 @@
 import Cabecera from "../../components/Cabecera";
-import CabeceraLink from "../../components/CabeceraLink";
+//import CabeceraLink from "../../components/CabeceraLink";
 import TitleSection from "../../components/TitleSection";
 import { CardServices, CardStep, CardDestacado } from "../../components/Card";
 import { cardsData, comprar, vender, destacados } from "../../data/data.json";
 
 function Inicio() {
   const data = {
-    encabezado: "Únete por un Mundo Sostenible",
-    leyenda: `Únete a nuestra comunidad dedicada a reducir el desperdicio
-    alimentario. Transformamos la compra y venta de alimentos, generando
-    impacto positivo. ¡Donde cada elección cuenta!`,
+    encabezado: "Salva alimentos y forma parte del cambio",
+    leyenda: `Únete a nuestra comunidad dedicada a reducir el desperdicio alimentario. Ahorra dinero generando impacto positivo. ¡Donde cada elección cuenta!`,
     img: "./img/Wavy Buddies Choosing Food.png",
   };
   return (
     <>
       <Cabecera>
-        <header className="row row-cols-1 row-cols-sm-2 row-cols-md-2 header-inicio">
-          <div className="col">
-            <h1 className="display-5 fw-semibold">{data.encabezado}</h1>
-            <p className="mt-3 fs-5 lh-lg">{data.leyenda}</p>
-            <div className="row row-cols-1 row-cols-md-1 row-cols-lg-2 mt-4">
-              <div className="col">
-                <CabeceraLink url="comprar">
-                  <p className="btn  button button-primary button-large mt-4">
-                    QUIERO COMPRAR
-                  </p>
-                </CabeceraLink>
-              </div>
-              <div className="col">
-                <CabeceraLink url="register">
-                  <p className="btn button button-primary button-large mt-4">
-                    QUIERO VENDER
-                  </p>
-                </CabeceraLink>
-              </div>
+        <header className="row text-center header-inicio">
+          <div className="contenedor">
+            <div className="col-6 offset-3 mt-5">
+              <h1 className="display-5 fw-bold">{data.encabezado}</h1>
             </div>
-          </div>
-          <div className="col col-sm">
-            <img src={data.img} alt="img" className="img-fluid float-end" />
+            <div className="col-6 offset-2 mt-4 slogan">
+              <p className="fs-5">
+                Únete a nuestra comunidad dedicada a reducir el desperdicio
+                alimentario.
+              </p>
+              <p className="fs-5">Ahorra dinero generando impacto positivo. </p>
+              <p className="fs-5">¡Donde cada elección cuenta!</p>
+            </div>
+            <div className="col-12  w-100 mt-4">
+              <button className="button button-dark button-large fs-5">
+                CONOCER MÁS
+              </button>
+            </div>
           </div>
         </header>
       </Cabecera>
       {/* Seccion Vision Mision */}
       <div className="row mt-5 py-5">
-        <div className="col-6 offset-3 text-center">
-          <h2 className="h2 fw-semibold">VISIÓN</h2>
+        <div className="col-8 offset-2 text-center">
+          <h2 className="h2 fw-semibold">NUESTRA MISIÓN</h2>
           <div className="divider-sm"></div>
-          <p className="text-center mt-5">
-            Conectamos comercios y personas comprometidas en evitar el
-            desperdicio alimentario. Nuestra misión es crear un vínculo
-            efectivo, permitiendo acceder a alimentos de calidad antes de
-            convertirse en desperdicio, generando un impacto positivo en la
-            sociedad y el medio ambiente.
+          <p className="text-center lh-lg my-5 fw-bold  color-danger">
+            En AprovhechaAQUÍ buscamos ponerle fin al desperdicio de alimentos
+          </p>
+          <p className="text-center lh-lg  mt-5">
+            Entendemos la situación ambiental actual generada a raíz de la
+            generación de desechos alimentarios, además de la situación
+            económica que Argentina atraviesa actualmente. Por eso, queremos
+            <strong> CONCIENTIZAR </strong> sobre ésta problemática que va en
+            aumento y <strong>CREAR COMUNIDAD</strong>.
+          </p>
+          <p className="text-center lh-lg ">
+            Realizamos la{" "}
+            <strong>difusión de sitios web y aplicaciones móviles </strong>
+            existentes en Argentina y en el mundo, que se enfocan en asegurar
+            que diferentes alimentos no lleguen a la basura, sean aprovechados y
+            se reduzca el impacto ambiental generado.
+          </p>
+          <p className="text-center lh-lg ">
+            Además, queremos que todas las personas tengan acceso a alimentos de
+            calidad, con el menor gasto posible y que conozcan alternativas
+            accesibles para favorecer su economía.
+          </p>
+          <p className="text-center lh-lg my-5 fw-bold color-danger">
+            ¡Hagamos del aprovechamiento de alimentos una práctica cotidiana!
           </p>
         </div>
       </div>
 
       <div className="row mt-2 py-5">
         <div className="col-6 offset-3 text-center">
-          <h2 className="h2 fw-semibold">MISIÓN</h2>
-          <div className="divider-sm"></div>
+          <h2 className="h2 fw-semibold">TU PARTICIPACION CUENTA</h2>
+          <div className="divider-mdx"></div>
           <p className="text-center mt-5">
-            En AprovechaAQUI, visualizamos un mundo donde la conexión entre
-            comercios y buscadores de soluciones contra el desperdicio
-            alimentario es ágil y efectiva. Trabajamos incansablemente para
-            facilitar este encuentro, asegurando que los productos a punto de
-            caducar encuentren un nuevo hogar, reduciendo así el impacto
-            ambiental. Únete a nosotros en esta misión de hacer del
-            aprovechamiento una práctica cotidiana.
+            Podemos cambiar la realidad y construir un mundo sin desperdicio.
+            Desde nuestro lugar podemos hacer mcuho. ¡Sumate también!
           </p>
         </div>
       </div>
-      {/* seccion ventajas */}
-      <div className="row text-center mt-5 py-5">
+      <div className="row text-center mt-0 py-2">
         <div className="col-12">
-          <TitleSection
-            title="¿Cuáles son las ventajas de AprovechAQUÍ?"
-            dividerType="divider-lg"
-          />
           <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 mt-5">
             {cardsData.map((card) => {
               return (
@@ -95,12 +96,20 @@ function Inicio() {
       {/* Seccion como comprar */}
       <div className="row text-center mt-5 py-5">
         <div className="col-10 offset-1">
-          <TitleSection title="¿Cómo Comprar?" dividerType="divider-sm" />
-          <div className="row row-cols-1 row-cols-sm-2 row-cols-md-4 mt-5">
-          {comprar.map((card, index) => {
+          <TitleSection
+            title="¿Cómo puedes participar?"
+            dividerType="divider-mdx"
+          />
+          <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 mt-5">
+            {comprar.map((card, index) => {
               return (
                 <>
-                  <CardStep key={card.id} number={card.id} text={card.text} index={index}/>
+                  <CardStep
+                    key={card.id}
+                    number={card.id}
+                    text={card.text}
+                    index={index}
+                  />
                 </>
               );
             })}
@@ -108,26 +117,31 @@ function Inicio() {
         </div>
       </div>
       {/* Seccion como vender */}
-      <div className="row text-center mt-5 py-5">
+      {/* <div className="row text-center mt-5 py-5">
         <div className="col-10 offset-1">
           <TitleSection title="¿Cómo Vender?" dividerType="divider-sm" />
           <div className="row row-cols-1 row-cols-sm-2 row-cols-md-4 mt-5">
             {vender.map((card, index) => {
               return (
                 <>
-                  <CardStep key={card.id} number={card.id} text={card.text} index={index}/>
+                  <CardStep
+                    key={card.id}
+                    number={card.id}
+                    text={card.text}
+                    index={index}
+                  />
                 </>
               );
             })}
           </div>
         </div>
-      </div>
+      </div> */}
       {/* Seccion destacados */}
       <div className="row text-center mt-5 py-5">
         <div className="col-10 offset-1">
           <TitleSection
-            title="¿Productos destacados?"
-            dividerType="divider-sm"
+            title="Recomendaciones de la semana"
+            dividerType="divider-lg"
           />
           <div className="row row-cols-1 row-cols-sm-2 row-cols-md-4 mt-5">
             {destacados.map((card) => {
@@ -147,25 +161,27 @@ function Inicio() {
       {/* Seccion nosotros */}
       <div className="row text-center mt-5 py-5 bg-secundario">
         <div className="col-10 offset-1">
-          <h2 className="h2 fw-semibold" id="nosotros">SOBRE AprovechAQUÍ</h2>
-          <div className="divider-sm"></div>
+          <h2 className="h2 fw-semibold" id="nosotros">
+            SOBRE AprovechAQUÍ
+          </h2>
+          <div className="divider-mdx"></div>
           <div className="row mt-5">
-            <div className="col col-md-6 offset-md-3 offset-0">
+            <div className="col col-md-8 offset-md-2 offset-0">
               <p className="text-center">
-                En AprovechAQUI, nos definimos como facilitadores de una
-                experiencia única, donde la reducción del desperdicio
-                alimentario se convierte en algo simple y gratificante.
-                Conectamos a comercios comprometidos con la sostenibilidad y a
-                usuarios conscientes que buscan aprovechar productos de calidad
-                a punto de caducar.
+                Buscamos que la reducción del desperdicio alimentario se
+                convierta en un proceso cotidiano, simple y gratificante. Somos
+                facilitadores de información y alternativas actuales e
+                innovadoras para que las personas conozcan sobre esta
+                problemática y contribuyan a la solución. Conectamos usuarios
+                conscientes con empresas y organizaciones comprometidos con la
+                sostenibilidad. Todos tenemos el mismo objetivo, ¡Queremos una
+                sociedad mejor!
               </p>
             </div>
           </div>
           <div className="row py-5 text-center">
             <div className="col">
-              <button className="button-variant m-auto">
-                CONTÁCTANOS
-              </button>
+              <button className="button-variant m-auto">CONTÁCTANOS</button>
             </div>
           </div>
         </div>

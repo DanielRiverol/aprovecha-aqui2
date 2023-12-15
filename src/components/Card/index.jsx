@@ -25,8 +25,8 @@ const CardServices = ({ title, text, img }) => {
   return (
     <div className="col">
       <img src={img} alt="img-muestra" className="img-fluid rounded" />
-      <h5 className="mt-3">{title}</h5>
-      <p className="form-text">{text}</p>
+      <h5 className="mt-3 color-danger fw-semibold">{title}</h5>
+      <p className="form-text lh-lg py-3 ">{text}</p>
     </div>
   );
 };

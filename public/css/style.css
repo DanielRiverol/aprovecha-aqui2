@@ -1,4 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&display=swap");
+
 body {
   font-family: "Poppins", sans-serif;
   background-color: #F5F5F5;
@@ -12,6 +13,7 @@ nav {
   color: #2A2F35;
   font-weight: 600;
 }
+
 .title-secondary {
   font-weight: 600;
   color: #ED7470;
@@ -19,7 +21,7 @@ nav {
 
 header.row {
   padding: 0 10%;
-  background-color: #73CAC3;
+  /*  background-color: #73CAC3; */
   height: 500px;
   display: flex;
   place-items: center;
@@ -30,7 +32,45 @@ header.header-comprar {
 }
 
 header.header-inicio {
+  position: relative;
+  width: 100vw;
   height: 93vh;
+  background-image: url(../../src/assets/background-banner.png);
+  background-size: cover;
+  background-position: center;
+}
+
+header.header-inicio .contenedor {
+  position: absolute;
+  left: 0;
+  width: 100% !important;
+  height: 480px;
+  background-color: #73CAC3;
+}
+
+.contenedor h1 {
+  line-height: normal;
+  width: 42.5625rem;
+  font-weight: 900;
+  font-size: 3.125rem;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.contenedor .slogan {
+  width: 800px;
+  text-align: center;
+  font-weight: 500;
+  height: 150px;
+}
+
+.slogan p {
+  font-style: 20px;
+}
+
+p.color-danger, h5.color-danger {
+  font-size: 23px;
+  color: #ed7470;
 }
 
 header.login-register {
@@ -45,6 +85,7 @@ header.login-register {
   font-weight: 600;
   letter-spacing: 1px;
 }
+
 .button:hover, .button-variant:hover {
   border: 2px solid #2A2F35;
   font-weight: 600;
@@ -55,6 +96,7 @@ header.login-register {
   background-color: #ED7470;
   color: #F5F5F5;
 }
+
 .button-variant:hover {
   border: 2px solid #ED7470;
   font-weight: 600;
@@ -107,7 +149,7 @@ header.login-register {
   background-color: #FBE77F;
 }
 
-.divider, .divider-lg, .divider-sm {
+.divider, .divider-lg, .divider-sm, .divider-mdx {
   top: 4.4rem;
   z-index: -1;
   left: 30%;
@@ -117,6 +159,11 @@ header.login-register {
 }
 
 .divider-sm {
+  left: 37.5%;
+  width: 25%;
+}
+
+.divider-mdx {
   width: 40%;
 }
 
@@ -148,6 +195,7 @@ header.login-register {
 .icon {
   font-size: 1.5rem;
 }
+
 .icon-warning {
   color: #FBE77F;
 }
@@ -167,6 +215,7 @@ header.login-register {
 .card-content {
   width: 258px;
 }
+
 .card-sidebar .card-header,
 .card-content .card-header {
   background-color: #73CAC3;
@@ -175,12 +224,15 @@ header.login-register {
 .list-group-item {
   border: none;
 }
+
 .list-group-item a i {
   font-size: 1.2rem;
 }
+
 .list-group-item a .bi-pin-map {
   color: #ED7470;
 }
+
 .list-group-item a .bi-plus-square-fill {
   color: #73CAC3;
 }
@@ -220,43 +272,54 @@ footer {
     height: auto;
     text-align: center;
   }
+
   header.row h1 {
     font-size: 30px !important;
   }
+
   header.row p {
     font-size: 18px !important;
   }
+
   header.row .col {
     margin-top: 20px;
   }
+
   footer {
     padding: 20px 0;
     text-align: center;
     height: auto;
   }
 }
+
 @media (max-width: 576px) {
   .row div.circle {
     margin: 0 auto;
   }
+
   .row .col .text-start {
     text-align: center !important;
   }
+
   .row h2 {
     font-size: 24px;
   }
+
   .border-custom {
     border-left: 0;
     border-top: 3px solid #73CAC3;
   }
+
   .divider-lg {
     left: 3%;
     width: 95% !important;
   }
+
   .divider-sm {
     left: 34%;
     width: 30% !important;
   }
+
   .avatar {
     width: 120px;
     height: 120px;

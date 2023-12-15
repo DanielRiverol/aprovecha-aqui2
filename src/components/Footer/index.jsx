@@ -1,24 +1,24 @@
 export default function Footer() {
   return (
     <>
-      <footer className="row row-cols-1 row-cols-md-2 text-light">
+      <footer className="row row-cols-1 row-cols-md-2 text-light ">
         <div className="col">
           <h3 className="fw-semibold">AprovechAQUÍ</h3>
         </div>
         <div className="col">
-          <h6>¿Necesitas ayuda?</h6>
-          <p className="small">
-            Contáctanos por email:
+          <h6 className="mx-5">¿Necesitas ayuda?</h6>
+          <p className="small mx-5">
+            Contáctanos por email: 
             <a
               href="#"
               className="link-light link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover"
             >
-              contacto@aprovechaaqui.com
+               contacto@aprovechaaqui.com
             </a>
           </p>
           <a
-            href="#"
-            className="small me-2 link-light link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover"
+            href="#nosotros"
+            className="small mx-5 link-light link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover"
           >
             Sobre...
           </a>

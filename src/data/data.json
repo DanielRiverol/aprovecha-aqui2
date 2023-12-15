@@ -26,7 +26,7 @@
     },
     {
       "id": 2,
-      "text": "Descargas las aplicaciones según tu ubicación y tus intereses. Puedes obtener más información sobre cada una de ellas en nuestro blog."
+      "text": "Descargas las aplicaciones según tu ubicación y tus intereses. Puedes obtener más información sobre cada una de ellas en nuestras redes."
     },
     {
       "id": 3,
@@ -54,50 +54,50 @@
   "destacados": [
     {
       "img": "./img/apps-1.png",
-      "name": "Destacado 1",
-      "text": "Texto descriptivo del Destacado 1",
+      "name": "Cheaf",
+      "link": "https://cheaf.com/",
       "rating": 4
     },
     {
       "img": "./img/apps-2.png",
-      "name": "Destacado 2",
-      "text": "Texto descriptivo del Destacado 2",
+      "name": "Encantado de comerte",
+      "link": "https://encantadodecomerte.es/",
       "rating": 5
     },
     {
       "img": "./img/apps-3.png",
-      "name": "Destacado 3",
-      "text": "Texto descriptivo del Destacado 3",
+      "name": "To Good to Go",
+      "link": "https://toogoodtogo.es/es/",
       "rating": 3
     },
     {
       "img": "./img/apps-4.png",
-      "name": "Destacado 4",
-      "text": "Texto descriptivo del Destacado 4",
+      "name": "Winim",
+      "link": "https://www.winim.com.ar/",
       "rating": 4
     },
     {
       "img": "./img/apps-5.png",
-      "name": "Destacado 5",
-      "text": "Texto descriptivo del Destacado 5",
+      "name": "Olio",
+      "link": "https://olioapp.com/en/",
       "rating": 5
     },
     {
       "img": "./img/apps-6.png",
-      "name": "Destacado 6",
-      "text": "Texto descriptivo del Destacado 6",
+      "name": "Banco de alimentos",
+      "link": "https://www.bancodealimentos.org.ar/",
       "rating": 5
     },
     {
       "img": "./img/apps-7.png",
-      "name": "Destacado 7",
-      "text": "Texto descriptivo del Destacado 7",
+      "name": "Red BdA",
+      "link": "https://www.redbda.org.ar/",
       "rating": 5
     },
     {
       "img": "./img/apps-8.png",
-      "name": "Destacado 8",
-      "text": "Texto descriptivo del Destacado 8",
+      "name": "Kigüi",
+      "link": "https://kigui.com.ar/",
       "rating": 5
     }
   ]

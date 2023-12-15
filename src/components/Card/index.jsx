@@ -12,10 +12,10 @@ const CardDestacado = ({ img, name, text, rating = 1 }) => {
     <div className="col mt-5 gx-5">
       <img src={img} alt="imagen" className="img-fluid rounded" />
       <h5 className="mt-2 fw-semibold">{name}</h5>
-      <p>{text}</p>
-      <div className="box">
+    {/*   <p>{text}</p> */}
+     {/*  <div className="box">
         {stars}{remainingStars}
-      </div>
+      </div> */}
     </div>
   );
 };
@@ -33,7 +33,7 @@ const CardServices = ({ title, text, img }) => {
 // eslint-disable-next-line react/prop-types
 const CardStep = ({ number, text, index }) => {
   return (
-    <div className={`col ${index !== 0 ? 'border-custom' : ''}`}>
+    <div className={`col ${index !== 0 ? 'border-custom' : ''} mt-5`}>
       <div className="mt-4 circle">{number}</div>
       <p className="mt-4 text-start">{text}</p>
     </div>

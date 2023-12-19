@@ -5,7 +5,7 @@ function Navegacion() {
       <nav className="navbar navbar-expand-lg">
         <div className="container-fluid">
           <CabeceraLink url="/">
-            <span className="navbar-brand fs-4 title">AprovechAQUÍ</span>
+            <span className="navbar-brand fs-4 title">Aprovech<img src="img/logo.png" alt="A" className="img-fluid img-logo"  />QUÍ</span>
           </CabeceraLink>
           <button
             className="navbar-toggler"

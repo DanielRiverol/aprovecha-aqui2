@@ -124,15 +124,22 @@ function Inicio() {
           </div>
         </div>
         <div className="sociales">
-          
-          <a href="" className="button button-dark button-medium fs-5">
+          <a
+            href="mailto:contacto@aprovechaaqui.com"
+            className="button button-dark button-medium fs-5"
+          >
             <i
-              className="bi bi-facebook me-3"
+              className="bi bi-envelope me-3"
               style={{ fontSize: 1.4 + "rem" }}
             ></i>
-            Facebook
+            Contactar
           </a>
-          <a href="" className="button button-dark button-medium fs-5">
+          <a
+            href="https://www.instagram.com/slow.revolutionn"
+            target="_blank"
+            className="button button-dark button-medium fs-5"
+            rel="noreferrer"
+          >
             <i
               className="bi bi-instagram me-3"
               style={{ fontSize: 1.4 + "rem" }}
@@ -237,23 +244,30 @@ function Inicio() {
                 <button className="button-variant m-auto">CONTÁCTANOS</button>
               </div>
             </div> */}
-             <div className="sociales">
-          
-          <a href="" className="button button-dark button-medium fs-5">
-            <i
-              className="bi bi-facebook me-3"
-              style={{ fontSize: 1.4 + "rem" }}
-            ></i>
-            Facebook
-          </a>
-          <a href="" className="button button-dark button-medium fs-5">
-            <i
-              className="bi bi-instagram me-3"
-              style={{ fontSize: 1.4 + "rem" }}
-            ></i>
-            Instagram
-          </a>
-        </div>
+            <div className="sociales">
+              <a
+                href="mailto:contacto@aprovechaaqui.com"
+                className="button button-dark button-medium fs-5"
+              >
+                <i
+                  className="bi bi-envelope me-3"
+                  style={{ fontSize: 1.4 + "rem" }}
+                ></i>
+                Contactar
+              </a>
+              <a
+                href="https://www.instagram.com/slow.revolutionn"
+                target="_blank"
+                className="button button-dark button-medium fs-5"
+                rel="noreferrer"
+              >
+                <i
+                  className="bi bi-instagram me-3"
+                  style={{ fontSize: 1.4 + "rem" }}
+                ></i>
+                Instagram
+              </a>
+            </div>
           </div>
         </div>
       </div>

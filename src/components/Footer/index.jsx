@@ -3,7 +3,7 @@ export default function Footer() {
     <>
       <footer className="row row-cols-1  row-cols-md-2  text-light ">
         <div className="col">
-          <h3 className="fw-semibold">AprovechAQUÍ</h3>
+          <h3 className="fw-semibold">Aprovech<img src="img/logo.png" alt="A" className="img-fluid img-logo" />QUÍ</h3>
         </div>
         <div className="col">
           <h6 className="mx-5">¿Necesitas ayuda?</h6>

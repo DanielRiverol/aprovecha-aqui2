@@ -14,12 +14,12 @@ nav {
 }
 
 nav .img-logo ,footer .img-logo{
-  width: 22px;
+  width: 30px;
   margin-bottom: 8px;
 }
-footer .img-logo{
-  margin-bottom: 7px;
-}
+/* footer .img-logo{
+  margin-bottom: 10px !important;
+} */
 p {
   font-size: 1.1rem !important;
 }

@@ -10,10 +10,10 @@ export default function Footer() {
           <p className="small mx-5">
             Contáctanos por email: 
             <a
-              href="#"
-              className="link-light link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover"
+              href="mailto:contacto@aprovechaaqui.com"
+              className="small link-light link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover ms-1"
             >
-               contacto@aprovechaaqui.com
+                contacto@aprovechaaqui.com
             </a>
           </p>
           <a
